@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.transparent{
+    background-color: transparent;
+}
+body{
+    background: rgb(34,195,36);
+    background: linear-gradient(90deg, rgba(34,195,36,1) 0%, rgba(81,139,222,1) 100%);
+    color: black;
+    font-family: 'Pacifico', cursive;
+}
+header{
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    position: fixed top;
+    font-size: 2.25vw;
+    display: flex;
+    width: 100%;
+}
+.logoHolder{
+    padding: 0.5vw;
+    width: 40%;
+}
+.headerLinksHolder{
+    right: 0;
+    text-align: right;
+    padding: 0.5vw;
+    width: 60%;
+}
+.headerLink{
+    border: 2px solid black;
+    border-radius: 5px 5px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    margin: 2px;
+}
+section{
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+.container{
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+.container h1{
+    font-size: 3vw;
+}
+.welcomeContent{
+    display: flex;
+}
+.welcomeContent div{
+    width: 50%;
+    padding: 6px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 2px;
+}
+.welcomeContent div p{
+    font-family: 'Source Code Pro', monospace;
+    text-align: left;
+    font-size: 1.5vw;
+    padding: 4px;
+}
+.welcomeImagesHolder{
+    display: flex;
+    flex-direction: column;
+}
+.welcomeImagesHolder img{
+    width: 50%;
+}
+.welcomeImg1 .welcomeImg3{
+    display: flex;
+    right: 0;
+}
+.welcomeImg2{
+    display: flex;
+    left: 0;
+}
+@media screen and (max-width: 1000px)  {
+    header{
+        font-size: 3.5vw;
+    }
+    .container h1{
+        font-size: 4.5vw;
+    }
+    .welcomeText{
+        font-size: 20px;
+    }
+    .welcomeContent div p{
+        font-family: 'Source Code Pro', monospace;
+        text-align: left;
+        font-size: 2vw;
+        padding: 4px;
+    }
+}
+@media screen and (max-width: 600px){
+    .welcomeContent{
+        display: block;
+    }
+}
