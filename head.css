@@ -1,0 +1,70 @@
+header{
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    position: fixed top;
+    font-size: 2.25vw;
+    display: flex;
+    width: 100%;
+}
+.logoHolder{
+    padding: 0.5vw;
+    width: 40%;
+}
+.headerLinksHolder{
+    right: 0;
+    text-align: right;
+    padding: 0.5vw;
+    width: 60%;
+}
+.headerLink{
+    border: 2px solid black;
+    border-radius: 5px 5px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    margin: 2px;
+    transition: all 0.4s ease;
+}
+.headerLinksHolder:hover{
+    animation: navLinkAnim 0.2s linear forwards 2;
+}
+.headerLinksHolder:hover .hlHome{
+    background-color: yellow;
+} 
+.headerLinksHolder:hover .hlAbout{
+    background-color: blue;
+} 
+.headerLinksHolder:hover .hlGallery{
+    background-color: red;
+} 
+.headerLinksHolder:hover .hlContact{
+    background-color: green;
+} 
+@keyframes navLinkAnim{
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(-3%);
+    }
+    50%{
+        transform: translateX(0);
+    }
+    75%{
+        transform: translateX(3%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.logoHolder:hover .logo{
+    animation: logoAnim 0.2s linear forwards;
+}
+@keyframes logoAnim {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}

@@ -3,14 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* General selectors */
 .transparent{
     background-color: transparent;
 }
-body{
-    background: rgb(34,195,36);
-    background: linear-gradient(90deg, rgba(34,195,36,1) 0%, rgba(81,139,222,1) 100%);
-    color: black;
+.pacificoFont{
     font-family: 'Pacifico', cursive;
+}
+/* Index and other general selectors */
+body{
+    color: black;
+    font-family: 'Source Code Pro', monospace;
+}
+.indexBody{
+    background: rgb(59,193,241);
+    background: linear-gradient(90deg, rgb(59,193,241) 13%, rgb(156, 216, 238) 50%, rgb(59,193,241) 87%);
 }
 header{
     margin-top: 1vw;
@@ -36,11 +43,55 @@ header{
     padding: 5px;
     text-decoration: none;
     color: black;
-    margin: 2px;
+    margin-block: 2px;
+    margin-inline: 4px;
+    transition: all 0.4s ease;
+}
+.headerLinksHolder:hover{
+    animation: navLinkAnim 0.2s linear forwards 2;
+}
+.headerLinksHolder:hover .hlHome{
+    background-color: rgb(59,193,241);
+} 
+.headerLinksHolder:hover .hlAbout{
+    background-color: rgb(255,63,0);
+} 
+.headerLinksHolder:hover .hlGallery{
+    background-color: rgb(253, 231, 76);
+} 
+.headerLinksHolder:hover .hlContact{
+    background-color: rgb(49, 203, 0);
+} 
+@keyframes navLinkAnim{
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(-3%);
+    }
+    50%{
+        transform: translateX(0);
+    }
+    75%{
+        transform: translateX(3%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.logoHolder:hover .logo{
+    animation: logoAnim 0.2s linear forwards;
+}
+@keyframes logoAnim {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
 }
 section{
-    margin-top: 2vw;
-    margin-bottom: 2vw;
+    margin-block: 6vw;
 }
 .container{
     width: 80%;
@@ -61,7 +112,6 @@ section{
     margin: 2px;
 }
 .welcomeContent div p{
-    font-family: 'Source Code Pro', monospace;
     text-align: left;
     font-size: 1.5vw;
     padding: 4px;
@@ -73,14 +123,45 @@ section{
 .welcomeImagesHolder img{
     width: 50%;
 }
-.welcomeImg1 .welcomeImg3{
+.welcomeImgEven{
     display: flex;
-    right: 0;
+    margin-right: 0;
+    margin-left: auto;
 }
-.welcomeImg2{
+.welcomeImgOdd{
     display: flex;
-    left: 0;
+    margin-left: 0;
 }
+/* About me */
+.aboutBody{
+    background: rgb(255,63,0);
+    background: linear-gradient(90deg, rgb(255,63,0) 13%, rgb(255,159, 128) 50%, rgb(255,63,0) 87%);
+}
+.aboutMeText{
+    margin: 1vw;
+}
+.aboutMeText p {
+    background-color: yellow;
+    font-size: 1.5vw;
+    border-radius: 10px;
+    padding: 1vw;
+    border: 3px solid rgb(59,193,241);
+    margin-block: 1vw;
+}
+.aboutMeText div{
+    display: flex;
+}
+.aboutMeText div img{
+    display: flex;
+    
+}
+.aboutMeText img{
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+/* Responsiveness */
 @media screen and (max-width: 1000px)  {
     header{
         font-size: 3.5vw;
@@ -96,6 +177,9 @@ section{
         text-align: left;
         font-size: 2vw;
         padding: 4px;
+    }
+    .aboutMeText p{
+        font-size: 2.5vw;
     }
 }
 @media screen and (max-width: 600px){
