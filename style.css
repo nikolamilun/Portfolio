@@ -1,3 +1,12 @@
+/* 
+boje: 
+
+obicna - svetla
+plava rgb(59,193,241) rgb(156, 216, 238)
+narandzasta rgb(255,63,0) rgb(255,159, 128)
+zuta rgb(253, 231, 76) rgb(240,228,135)
+zelena rgb (49, 203, 0) rgb(113,255,70)
+ */
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +18,59 @@
 }
 .pacificoFont{
     font-family: 'Pacifico', cursive;
+}
+.gitHubButton{
+    display: block;
+    margin: auto;
+    width: 5%;
+    border: 0px;
+}
+.gitHubButton img{
+    max-width: 100%;
+    object-fit: cover;
+    margin-inline: auto;
+}
+.gitHubButton :hover{
+    animation: spinfast 1s ease-in-out backwards;
+}
+@keyframes spinfast {
+    0%{
+        transform: rotate(0);
+    }
+    40%{
+        transform: rotate(360deg);
+    }
+    90%{
+        transform: rotate(810deg);
+    }
+    100%{
+        transform: rotate(720deg);
+    }
+}
+@keyframes jiggleHorizontal{
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(-3%);
+    }
+    50%{
+        transform: translateX(0);
+    }
+    75%{
+        transform: translateX(3%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes fadeInHeaders {
+    from{
+        font-size: 0;
+    }
+    to{
+        font-size: 3vw;
+    }
 }
 /* Index and other general selectors */
 body{
@@ -27,9 +89,19 @@ header{
     display: flex;
     width: 100%;
 }
+#footer{
+    margin: 0;
+    background-color: white;
+}
+footer{
+    padding: 5px;
+    font-size: 1.5vw;
+    text-align: center;
+}
 .logoHolder{
     padding: 0.5vw;
     width: 40%;
+    transition: all 0.2s ease;
 }
 .headerLinksHolder{
     right: 0;
@@ -48,7 +120,7 @@ header{
     transition: all 0.4s ease;
 }
 .headerLinksHolder:hover{
-    animation: navLinkAnim 0.2s linear forwards 2;
+    animation: jiggleHorizontal 0.2s linear forwards 2;
 }
 .headerLinksHolder:hover .hlHome{
     background-color: rgb(59,193,241);
@@ -62,23 +134,6 @@ header{
 .headerLinksHolder:hover .hlContact{
     background-color: rgb(49, 203, 0);
 } 
-@keyframes navLinkAnim{
-    0%{
-        transform: translateX(0);
-    }
-    25%{
-        transform: translateX(-3%);
-    }
-    50%{
-        transform: translateX(0);
-    }
-    75%{
-        transform: translateX(3%);
-    }
-    100%{
-        transform: translateX(0);
-    }
-}
 .logoHolder:hover .logo{
     animation: logoAnim 0.2s linear forwards;
 }
@@ -100,37 +155,30 @@ section{
 }
 .container h1{
     font-size: 3vw;
-}
-.welcomeContent{
-    display: flex;
-}
-.welcomeContent div{
-    width: 50%;
-    padding: 6px;
-    border: 2px solid black;
-    border-radius: 10px;
-    margin: 2px;
-}
-.welcomeContent div p{
-    text-align: left;
-    font-size: 1.5vw;
-    padding: 4px;
+    margin: 4px;
+    animation: fadeInHeaders 1s ease-out;
 }
 .welcomeImagesHolder{
     display: flex;
     flex-direction: column;
+    border-radius: 10px 10px;
+    padding: 10px;
 }
-.welcomeImagesHolder img{
+.welcomeImagesHolder div{
+    display: flex;
+    padding: 1vw;
+    margin: 1vw;
+    border: 2px solid rgb(0, 0, 0, 0.5);
+}
+.welcomeImagesHolder p{
+    font-size: 4vw;
     width: 50%;
+    margin-block: auto;
 }
-.welcomeImgEven{
-    display: flex;
-    margin-right: 0;
-    margin-left: auto;
-}
-.welcomeImgOdd{
-    display: flex;
-    margin-left: 0;
+.welcomeImagesHolder div img{
+    width: 50%;
+    border-radius: 5px 5px;
+    box-shadow: 5px 5px rgb(0, 0, 0, 0.3);
 }
 /* About me */
 .aboutBody{
@@ -138,28 +186,34 @@ section{
     background: linear-gradient(90deg, rgb(255,63,0) 13%, rgb(255,159, 128) 50%, rgb(255,63,0) 87%);
 }
 .aboutMeText{
-    margin: 1vw;
+    margin: 0.5vw;
 }
 .aboutMeText p {
     background-color: yellow;
     font-size: 1.5vw;
     border-radius: 10px;
     padding: 1vw;
-    border: 3px solid rgb(59,193,241);
+    border: 3px solid black;
     margin-block: 1vw;
+    animation: jiggleHorizontal 0.25s ease 1s 2;
 }
 .aboutMeText div{
     display: flex;
 }
 .aboutMeText div img{
     display: flex;
-    
+    object-fit: cover;
+    object-position: left;
+}
+.aboutMeImage1, .aboutMeImage2{
+    width: 50%;
 }
 .aboutMeText img{
     overflow: hidden;
     width: 100%;
     border-radius: 10px;
     border: 2px solid black;
+    margin: 2px;
 }
 /* Responsiveness */
 @media screen and (max-width: 1000px)  {
@@ -181,9 +235,18 @@ section{
     .aboutMeText p{
         font-size: 2.5vw;
     }
+    .aboutMeText div{
+        display: block;
+    }
+    .gitHubButton{
+        width: 10%;
+    }
 }
 @media screen and (max-width: 600px){
     .welcomeContent{
         display: block;
+    }
+    .headerLink{
+        font-size: 2vw;
     }
 }
