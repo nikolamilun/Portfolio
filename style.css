@@ -66,10 +66,30 @@ zelena rgb (49, 203, 0) rgb(113,255,70)
 }
 @keyframes fadeInHeaders {
     from{
-        font-size: 0;
+        transform: scale(0);
     }
     to{
-        font-size: 3vw;
+        transform: scale(100%);
+    }
+}
+@keyframes jiggleRotate{
+    0%{
+        transform: rotate(0) scale(100%);
+    }
+    20%{
+        transform: rotate(20deg) scale(120%);
+    }
+    40%{
+        transform: rotate(-20deg) scale(120%);
+    }
+    60%{
+        transform: rotate(20deg) scale(120%);
+    }
+    80%{
+        transform: rotate(20deg) scale(120%);
+    }
+    100%{
+        transform: rotate(0) scale(100%);
     }
 }
 /* Index and other general selectors */
@@ -82,8 +102,6 @@ body{
     background: linear-gradient(90deg, rgb(59,193,241) 13%, rgb(156, 216, 238) 50%, rgb(59,193,241) 87%);
 }
 header{
-    margin-top: 1vw;
-    margin-bottom: 2vw;
     position: fixed top;
     font-size: 2.25vw;
     display: flex;
@@ -100,14 +118,21 @@ footer{
 }
 .logoHolder{
     padding: 0.5vw;
-    width: 40%;
+    width: 20%;
     transition: all 0.2s ease;
+    left: 0;
+    right: auto;
+}
+.logo{
+    max-width: 100%;
 }
 .headerLinksHolder{
-    right: 0;
+    margin-right: 0;
+    margin-left: auto;
     text-align: right;
     padding: 0.5vw;
     width: 60%;
+    margin-top: 1vw;
 }
 .headerLink{
     border: 2px solid black;
@@ -146,7 +171,7 @@ footer{
     }
 }
 section{
-    margin-block: 6vw;
+    margin-bottom: 6vw;
 }
 .container{
     width: 80%;
@@ -215,6 +240,76 @@ section{
     border: 2px solid black;
     margin: 2px;
 }
+/* Contact */
+.contactBody{
+    background: rgb(82, 207, 44);
+    background: linear-gradient(90deg, rgb(82, 207, 44) 13%, rgb(128, 204, 104) 50%, rgb(82, 207, 44) 87%);
+}
+#phpForm{
+    border: 2px solid black;
+    width: 40%;
+    padding: 10px;
+    margin-inline: auto;
+    border-radius: 15px 15px;
+}
+#phpForm h2{
+    text-align: center;
+    margin: 5px;
+    animation: fadeInHeaders 1s ease-out;
+}
+.contactHeader{
+    font-size: 2vw;
+    animation: jiggleRotate 1s ease-in-out forwards 0.25s;
+}
+.socialMedia{
+    display: flex;
+}
+.socialMedia a{
+    width: 20%;
+    display: block;
+    margin: auto;
+    padding: 10px;
+    margin: 3vw;
+    font-size: 1.25vw;
+    background-color: white;
+    border: 2px solid black;
+}
+.socialMedia a img{
+    max-width: 100%;
+    object-fit: cover;
+}
+#mainForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#mainForm p{
+    color: red;
+    background-color: yellow;
+    border-radius: 5px 5px;
+    border: 1px solid black;
+    padding: 3px;
+}
+#mainForm div {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-inline: auto;
+}
+#mainForm div *{
+    width: 50%;
+}
+.submit{
+    background-color: rgb(253, 231, 76);
+    padding: 5px;
+    font-size: 1.5vw;
+    border-radius: 10px 10px;
+}
+#formSubmitted h1, p{
+    text-align: center;
+    padding: 7px;
+}
 /* Responsiveness */
 @media screen and (max-width: 1000px)  {
     header{
@@ -240,6 +335,9 @@ section{
     }
     .gitHubButton{
         width: 10%;
+    }
+    .submit{
+        font-size: 2.5vw;
     }
 }
 @media screen and (max-width: 600px){
