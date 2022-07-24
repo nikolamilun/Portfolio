@@ -19,20 +19,6 @@ zelena rgb (49, 203, 0) rgb(113,255,70)
 .pacificoFont{
     font-family: 'Pacifico', cursive;
 }
-.gitHubButton{
-    display: block;
-    margin: auto;
-    width: 5%;
-    border: 0px;
-}
-.gitHubButton img{
-    max-width: 100%;
-    object-fit: cover;
-    margin-inline: auto;
-}
-.gitHubButton :hover{
-    animation: spinfast 1s ease-in-out backwards;
-}
 @keyframes spinfast {
     0%{
         transform: rotate(0);
@@ -240,6 +226,20 @@ section{
     border: 2px solid black;
     margin: 2px;
 }
+.gitHubButton{
+    display: block;
+    margin: auto;
+    width: 5%;
+    border: 0px;
+}
+.gitHubButton img{
+    max-width: 100%;
+    object-fit: cover;
+    margin-inline: auto;
+}
+.gitHubButton :hover{
+    animation: spinfast 1s ease-in-out backwards;
+}
 /* Contact */
 .contactBody{
     background: rgb(82, 207, 44);
@@ -309,6 +309,48 @@ section{
 #formSubmitted h1, p{
     text-align: center;
     padding: 7px;
+}
+/* Gallery */
+.galleryBody{
+    background: rgb(253, 231, 76);
+    background: linear-gradient(90deg, rgb(253, 231, 76) 13%, rgb(240,228,135) 50%, rgb(253, 231, 76) 87%);
+}
+.galleryRow{
+    display: flex;
+}
+.galleryRow *{
+    width: 50%;
+    margin: 10px;
+}
+.galleryProjectContainer{
+    margin-block: 2vw;
+    border: 2px solid black;
+    border-radius: 15px 15px;
+    padding: 15px;
+}
+.galleryProjectContainer *{
+    margin-block: 5px;
+}
+.galleryPics, .galleryDescs{
+    display: flex;
+}
+.galleryPics *, .galleryDescs *{
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 10px 10px;
+}
+.galleryPic img{
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    object-fit: cover;
+}
+.galleryDescs p{
+    text-align: center;
+    font-size: 0.5vw;
+}
+.galleryHeaderAnim{
+    animation: jiggleRotate 1s ease-in-out forwards;
 }
 /* Responsiveness */
 @media screen and (max-width: 1000px)  {

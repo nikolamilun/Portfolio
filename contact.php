@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Meta tags -->
+        <meta name="description" content="I'm Nikola Milun, a junior full-stack dev and here's my portfolio!">
+        <meta name="keywords" content="programming, web developer, database design, desktop apps, developer, full-stack">
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,7 +77,7 @@
                 $username = 'root';
                 $password = '';
                 $database = "portfoliocontact";
-                
+
                 // validate name
                 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
                 if($name)
@@ -123,18 +126,17 @@
                             else
                                 $errors['other'] = OTHER_ERROR;
                         }
-                    if(count($errors)){
-                        ?>
-                            <section id="formSubmitted">
-                                <h1>There has been an error processing your request.</h1>
-                                <p>Check if you had written everything down correctly! The errors: </p>
-                                <?php foreach($errors as $error){
-                                    echo("<p>$error</p>");
-                                }?>
-                            </section>
+                }
+                else{ ?>
+                    <section id="formSubmitted">
+                        <h1>There has been an error processing your request.</h1>
+                        <p>Check if you had written everything down correctly! The errors: </p>
+                        <?php foreach($errors as $error){
+                            echo("<p>$error</p>");
+                        }?>
+                    </section>
                 <?php }
-                
-            }} ?>                  
+                } ?>                  
     </body>
 </html>
 <!-- <a target="_blank" href="https://icons8.com/icon/P7UIlhbpWzZm/gmail">Gmail</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
