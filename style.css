@@ -19,6 +19,20 @@ zelena rgb (49, 203, 0) rgb(113,255,70)
 .pacificoFont{
     font-family: 'Pacifico', cursive;
 }
+.gitHubButton{
+    display: block;
+    margin: auto;
+    width: 5%;
+    border: 0px;
+}
+.gitHubButton img{
+    max-width: 100%;
+    object-fit: cover;
+    margin-inline: auto;
+}
+.gitHubButton :hover{
+    animation: spinfast 1s ease-in-out backwards;
+}
 @keyframes spinfast {
     0%{
         transform: rotate(0);
@@ -226,20 +240,6 @@ section{
     border: 2px solid black;
     margin: 2px;
 }
-.gitHubButton{
-    display: block;
-    margin: auto;
-    width: 5%;
-    border: 0px;
-}
-.gitHubButton img{
-    max-width: 100%;
-    object-fit: cover;
-    margin-inline: auto;
-}
-.gitHubButton :hover{
-    animation: spinfast 1s ease-in-out backwards;
-}
 /* Contact */
 .contactBody{
     background: rgb(82, 207, 44);
@@ -319,38 +319,60 @@ section{
     display: flex;
 }
 .galleryRow *{
-    width: 50%;
     margin: 10px;
 }
+.galleryHalfRow{
+    display: flex;
+}
 .galleryProjectContainer{
+    width: 50%;
     margin-block: 2vw;
     border: 2px solid black;
     border-radius: 15px 15px;
     padding: 15px;
 }
 .galleryProjectContainer *{
+    margin-inline: 0 auto;
     margin-block: 5px;
 }
 .galleryPics, .galleryDescs{
     display: flex;
 }
-.galleryPics *, .galleryDescs *{
-    width: 50%;
+.galleryDescs *{
     border: 2px solid black;
     border-radius: 10px 10px;
+}
+.galleryPic{
+    width: 50%;
 }
 .galleryPic img{
     width: 100%;
     max-width: 100%;
     margin: 0;
     object-fit: cover;
+    border: 2px solid black;
+    border-radius: 10px 10px;
 }
-.galleryDescs p{
+.galleryDesc{
     text-align: center;
-    font-size: 0.5vw;
+    font-size: 0.75vw;
+    width: 50%;
 }
 .galleryHeaderAnim{
     animation: jiggleRotate 1s ease-in-out forwards;
+}
+.galleryProjectContainer a{
+    margin: 0 auto;
+    width: 25%;
+}
+.shadow{
+    background-color: black;
+    opacity: 0;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    top: 0;
 }
 /* Responsiveness */
 @media screen and (max-width: 1000px)  {
@@ -380,6 +402,12 @@ section{
     }
     .submit{
         font-size: 2.5vw;
+    }
+    .galleryRow{
+        display: block;
+    }
+    .galleryDesc{
+        font-size: 1.75vw;
     }
 }
 @media screen and (max-width: 600px){
