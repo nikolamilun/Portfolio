@@ -42,7 +42,7 @@
                     <h2 class="contactHeader">You can contact me on:</h2>
                     <div class="socialMedia">
                         <a href="https://github.com/nikolamilun" target = "_blank"><img src="images/gitHubIcon.png" alt="GitHub"></a>
-                        <a href="mailto: nikolamilun2508@gmail.com" target = "_blank"><img src="images/gmailIcon.png" alt="Gmail"></a>
+                        <a href="mailto:nikolamilun2508@gmail.com" target = "_blank"><img src="images/gmailIcon.png" alt="Gmail"></a>
                         <a href="https://www.facebook.com/zeljko.milun.3/" target = "_blank"><img src="images/facebookLogo.png" alt="Instagram"></a>
                         <a href="https://www.instagram.com/samolimun/" target = "_blank"><img src="images/instagramIcon.png" alt="Facebook"></a>
                         <a href="https://www.fiverr.com/nikolamilun" target = "_blank">A site whose logo I won't put here</a>

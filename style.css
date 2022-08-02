@@ -33,6 +33,34 @@ zelena rgb (49, 203, 0) rgb(113,255,70)
 .gitHubButton :hover{
     animation: spinfast 1s ease-in-out backwards;
 }
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form p{
+    color: red;
+    background-color: yellow;
+    border-radius: 5px 5px;
+    border: 1px solid black;
+    padding: 3px;
+}
+form div {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-inline: auto;
+}
+form div *{
+    width: 50%;
+}
+.submit{
+    background-color: rgb(253, 231, 76);
+    padding: 5px;
+    font-size: 1.5vw;
+    border-radius: 10px 10px;
+}
 @keyframes spinfast {
     0%{
         transform: rotate(0);
@@ -278,34 +306,6 @@ section{
     max-width: 100%;
     object-fit: cover;
 }
-#mainForm{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-#mainForm p{
-    color: red;
-    background-color: yellow;
-    border-radius: 5px 5px;
-    border: 1px solid black;
-    padding: 3px;
-}
-#mainForm div {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    margin-inline: auto;
-}
-#mainForm div *{
-    width: 50%;
-}
-.submit{
-    background-color: rgb(253, 231, 76);
-    padding: 5px;
-    font-size: 1.5vw;
-    border-radius: 10px 10px;
-}
 #formSubmitted h1, p{
     text-align: center;
     padding: 7px;
@@ -367,12 +367,64 @@ section{
 }
 .shadow{
     background-color: black;
-    opacity: 0;
+    opacity: 0.75;
     z-index: 1;
     position: fixed;
     width: 100%;
     bottom: 0;
     top: 0;
+    visibility: hidden;
+    transition: all 0.5s linear;
+}
+.bigImage{
+    width: 75%;
+    margin: 5% auto;
+    border: 2px solid black;
+    border-radius: 10px 10px;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    position: fixed;
+    height: 75%;
+    z-index: 2;
+    transition: all 0.5s linear;
+    object-fit: contain;
+}
+.closeButton{
+    font-family: 'Source Code Pro', monospace;
+    visibility: hidden;
+    width: 25%;
+    left: 50%;
+    right: 50%;
+    transform: translatex(-50%);
+    top: 85%;
+    position: fixed;
+    padding: 10px;
+    border-radius: 5px 5px;
+    font-size: 2vw;
+    z-index: 2;
+    transition: all 0.5s linear;
+}
+.hidden{
+    opacity: 0;
+}
+.visible{
+    opacity: 1;
+}
+/* Admin */
+.adminBody{
+    background: rgb(90, 82, 143);
+}
+.adminTitle{
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10%;
+}
+.logInForm{
+    border: 2px solid black;
+    border-radius: 10px 10px;
+    padding: 10px;
+    width: 50%;
 }
 /* Responsiveness */
 @media screen and (max-width: 1000px)  {
