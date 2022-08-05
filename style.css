@@ -49,11 +49,16 @@ form p{
 form div {
     display: flex;
     justify-content: center;
-    padding: 10px;
+    padding-block: 10px;
     margin-inline: auto;
 }
 form div *{
     width: 50%;
+}
+input, textarea{
+    border-radius: 5px 5px;
+    border: 2px solid black;
+    padding: 5px;
 }
 .submit{
     background-color: rgb(253, 231, 76);
@@ -426,6 +431,25 @@ section{
     padding: 10px;
     width: 50%;
 }
+table{
+    width: 100%;
+    border: 4px solid black;
+    border-radius: 10px 10px;
+}
+th, td{
+    width: 33%;
+    border: 2px solid black;
+    padding: 10px;
+}
+.download{
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.download input{
+    padding: 10px;
+    font-size: 2vw;
+    background-color: rgb(253, 231, 76);
+}
 /* Responsiveness */
 @media screen and (max-width: 1000px)  {
     header{
@@ -460,6 +484,9 @@ section{
     }
     .galleryDesc{
         font-size: 1.75vw;
+    }
+    #phpForm{
+        width: 80%;
     }
 }
 @media screen and (max-width: 600px){

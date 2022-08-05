@@ -55,11 +55,11 @@
                     <p>*Every field is required</p>
                     <div>
                         <label for="name">Your name, or name of your organization: </label>
-                        <input type="text" name="name" maxlength = "30" required>
+                        <input type="text" name="name" placeholder="Your name here" maxlength = "30" required>
                     </div>
                     <div>
                         <label for="email">Your email:</label>
-                        <input type="email" name="email" maxlength = "20" required>
+                        <input type="email" name="email" placeholder="example@domain.com" maxlength = "40" required>
                     </div>
                     <div>
                         <label for="message">Your message to me: </label>
@@ -112,7 +112,7 @@
                         $errors['other'] = OTHER_ERROR;
                     else
                         {
-                            $cmdText = "INSERT INTO Message (name, email, message) VALUES('$name', '$email', '$message');";  
+                            $cmdText = "INSERT INTO Message (name, email, message) VALUES('" .$name. "', '" .$email. "', '" .$message. "');";  
                             
                             if(mysqli_query($conn, $cmdText)){
                             ?>
@@ -139,4 +139,3 @@
                 } ?>                  
     </body>
 </html>
-<!-- <a target="_blank" href="https://icons8.com/icon/P7UIlhbpWzZm/gmail">Gmail</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->

@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="style.css">
         <title>Nikola Milun - admin</title>
     </head>
-    <body class="adminBody" onLoad="pageLoad();">
+    
         <?php 
             $errors = [];
             const NAME_ERROR = 'Please, type your name in correctly';
@@ -25,23 +25,25 @@
             const OTHER_ERROR = 'There has been an error processing your request. Please contact the site admin.';
             if($_SERVER['REQUEST_METHOD'] === 'GET'){
         ?>
-            <h1 class="adminTitle">Please log in as an administrator!</h1>
-            <section id="logIn">
-                <div class="container logInForm">
-                    <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?>" id="loginForm" method = "POST">
-                            <p>*Every field is required</p>
-                            <div>
-                                <label for="adminName">Your name, or name of your organization: </label>
-                                <input type="text" name="adminName" maxlength = "20" id="adminNameInput" required>
-                            </div>
-                            <div>
-                                <label for="password">Your email:</label>
-                                <input type="password" name="password" maxlength = "20" required>
-                            </div>
-                            <input type="submit" class="submit" onClick="getUsernameCookie();">
-                    </form>
-                </div>
-            </section>
+            <body class="adminBody" onLoad="pageLoad();">
+                <h1 class="adminTitle">Please log in as an administrator!</h1>
+                <section id="logIn">
+                    <div class="container logInForm">
+                        <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?>" id="loginForm" method = "POST">
+                                <p>*Every field is required</p>
+                                <div>
+                                    <label for="adminName">Your username: </label>
+                                    <input type="text" name="adminName" maxlength = "20" id="adminNameInput" required>
+                                </div>
+                                <div>
+                                    <label for="password">Your password:</label>
+                                    <input type="password" name="password" maxlength = "20" required>
+                                </div>
+                                <input type="submit" class="submit" onClick="getUsernameCookie();">
+                        </form>
+                    </div>
+                </section>
+            </body>
         <?php }
             else{
                 $loggedIn = false;
@@ -106,37 +108,49 @@
                             {
                                 array_push($data, array($row[0], $row[1], $row[2]));
                             }
+
+                            mysqli_close($conn);
+
                             ?>
-                            <h1 class="adminTitle">Hey, <?php echo($name)?>, you're in charge now!</h1>
-                            <section id="requests">
-                                <div class="container">
-                                    <h2 class="requestsHeader">These requests were made in the last three days: </h2>
-                                    <table>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Message</th>
-                                        </tr>
-                                        <?php
-                                            foreach($data as $row){
-                                            echo("<tr>");
-                                            foreach($row as $value)
-                                                echo("<td>{$value}</td>");
-                                            echo("</tr>");
-                                            }
-                                        ?>
-                                    </table>
-                                </div>
-                            </section>
+                            <body class="adminBody">
+                                <h1 class="adminTitle">Hey, <?php echo($name)?>, you're in charge now!</h1>
+                                <section id="requests">
+                                    <div class="container">
+                                        <h2 class="requestsHeader">These requests were made in the last three days: </h2>
+                                        <table>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Message</th>
+                                            </tr>
+                                            <?php
+                                                foreach($data as $row){
+                                                echo("<tr>");
+                                                foreach($row as $value)
+                                                    echo("<td>{$value}</td>");
+                                                echo("</tr>");
+                                                }
+                                            ?>
+                                        </table>
+                                    </div>
+                                    <form method="POST" action="download.php" class="download">
+                                        <input type="submit" value="Download all">
+                                    </form>
+                                </section>
+                            </body>
                         <?php }
                     }
                 }
                 else{
         ?>
-        
-        <?php }}
-
-         ?>
+            <section id="formSubmitted">
+                <h1>There has been an error processing your request.</h1>
+                <p>Check if you had written everything down correctly! The errors: </p>
+                <?php foreach($errors as $error){
+                    echo("<p>$error</p>");
+                }?>
+            </section>
+        <?php }} ?>
     </body>
     <script src="admin.js"></script>
 </html>
