@@ -66,6 +66,16 @@ input, textarea{
     font-size: 1.5vw;
     border-radius: 10px 10px;
 }
+.mima, .mima *{
+    color: green;
+    text-decoration: none;
+}
+.mima *{
+    background-color: yellow;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 5px 5px;
+}
 @keyframes spinfast {
     0%{
         transform: rotate(0);
@@ -143,6 +153,8 @@ header{
 #footer{
     margin: 0;
     background-color: white;
+    bottom: 0;
+    width: 100%;
 }
 footer{
     padding: 5px;
@@ -164,7 +176,7 @@ footer{
     margin-left: auto;
     text-align: right;
     padding: 0.5vw;
-    width: 60%;
+    width: 80%;
     margin-top: 1vw;
 }
 .headerLink{
@@ -273,64 +285,19 @@ section{
     border: 2px solid black;
     margin: 2px;
 }
-/* Contact */
-.contactBody{
-    background: rgb(82, 207, 44);
-    background: linear-gradient(90deg, rgb(82, 207, 44) 13%, rgb(128, 204, 104) 50%, rgb(82, 207, 44) 87%);
-}
-#phpForm{
-    border: 2px solid black;
-    width: 40%;
-    padding: 10px;
-    margin-inline: auto;
-    border-radius: 15px 15px;
-}
-#phpForm h2{
-    text-align: center;
-    margin: 5px;
-    animation: fadeInHeaders 1s ease-out;
-}
-.contactHeader{
-    font-size: 2vw;
-    animation: jiggleRotate 1s ease-in-out forwards 0.25s;
-}
-.socialMedia{
-    display: flex;
-}
-.socialMedia a{
-    width: 20%;
-    display: block;
-    margin: auto;
-    padding: 10px;
-    margin: 3vw;
-    font-size: 1.25vw;
-    background-color: white;
-    border: 2px solid black;
-}
-.socialMedia a img{
-    max-width: 100%;
-    object-fit: cover;
-}
-#formSubmitted h1, p{
-    text-align: center;
-    padding: 7px;
-}
 /* Gallery */
 .galleryBody{
     background: rgb(253, 231, 76);
     background: linear-gradient(90deg, rgb(253, 231, 76) 13%, rgb(240,228,135) 50%, rgb(253, 231, 76) 87%);
 }
 .galleryRow{
-    display: flex;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
 }
 .galleryRow *{
-    margin: 10px;
-}
-.galleryHalfRow{
-    display: flex;
+    margin: 0px auto;
 }
 .galleryProjectContainer{
-    width: 50%;
     margin-block: 2vw;
     border: 2px solid black;
     border-radius: 15px 15px;
@@ -450,6 +417,51 @@ th, td{
     font-size: 2vw;
     background-color: rgb(253, 231, 76);
 }
+.errors{
+    background-color: rgb(253, 231, 76);
+}
+/* Contact */
+.contactBody{
+    background: rgb(82, 207, 44);
+    background: linear-gradient(90deg, rgb(82, 207, 44) 13%, rgb(128, 204, 104) 50%, rgb(82, 207, 44) 87%);
+}
+#messageForm{
+    border: 2px solid black;
+    width: 40%;
+    padding: 10px;
+    margin-inline: auto;
+    border-radius: 15px 15px;
+}
+#messageForm h2{
+    text-align: center;
+    margin: 5px;
+    animation: fadeInHeaders 1s ease-out;
+}
+.contactHeader{
+    font-size: 2vw;
+    animation: jiggleRotate 1s ease-in-out forwards 0.25s;
+}
+.socialMedia{
+    display: flex;
+}
+.socialMedia a{
+    width: 20%;
+    display: block;
+    margin: auto;
+    padding: 10px;
+    margin: 3vw;
+    font-size: 1.25vw;
+    background-color: white;
+    border: 2px solid black;
+}
+.socialMedia a img{
+    max-width: 100%;
+    object-fit: cover;
+}
+#formSubmitted h1, p{
+    text-align: center;
+    padding: 7px;
+}
 /* Responsiveness */
 @media screen and (max-width: 1000px)  {
     header{
@@ -485,7 +497,7 @@ th, td{
     .galleryDesc{
         font-size: 1.75vw;
     }
-    #phpForm{
+    #messageForm{
         width: 80%;
     }
 }
@@ -494,6 +506,54 @@ th, td{
         display: block;
     }
     .headerLink{
+        font-size: 4.5vw;
+    }
+    footer{
+        font-size: 3vw;
+    }
+    .socialMedia a{
+        width: 100%;
+    }
+    .container{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .headerLink{
+        font-size: 4vw;
+    }
+    #welcome div {
+        display: block;
+    }
+    #welcome div *{
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 300px){
+    .headerLink{
+        margin: 3px;
+    }
+    footer{
+        font-size: 4vw;
+    }
+    #aboutDesc p{
+        font-size: 4vw;
+    }
+    .gitHubButton{
+        width: 30%;
+    }
+    .galleryDesc{
+        font-size: 3vw;
+    }
+    .socialMedia a{
+        padding: 2px;
         font-size: 2vw;
     }
+    .contactHeader{
+        font-size: 4vw;
+    }
+    label, input, .submit{
+        font-size: 4.5vw;
+    }
+
 }

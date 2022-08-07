@@ -49,7 +49,7 @@
                     </div>
                 </div>
             </section>
-            <section id="phpForm">
+            <section id="messageForm">
                 <h2>Send me a message!</h2>
                 <form action="<?php htmlspecialchars($_SERVER['PHP_SELF'])?>" method = "POST" id="mainForm">
                     <p>*Every field is required</p>
@@ -136,6 +136,13 @@
                         }?>
                     </section>
                 <?php }
-                } ?>                  
+                } ?>
+        <section id="footer">
+            <footer>
+                <p>Made by Nikola Milun© 2022</p>
+                <p>All rights reserved</p>
+                <p class="mima">Logo by <a href="https://www.instagram.com/eshi_mima/">EshiMima</a></p>
+            </footer>
+        </section>              
     </body>
 </html>
