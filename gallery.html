@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Site icon -->
+        <link rel="icon" href="images/SmallLogo.jpg">
         <!-- Meta tags -->
         <meta name="description" content="I'm Nikola Milun, a junior full-stack dev and here's my portfolio!">
         <meta name="keywords" content="programming, web developer, database design, desktop apps, developer, full-stack">
@@ -13,12 +15,16 @@
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Source+Code+Pro&display=swap" rel="stylesheet">
         <!-- Local CSS -->
         <link rel="stylesheet" href="style.css">
+        <!-- Script -->
+        <script src="gallery.js" defer></script>
         <title>Nikola Milun - Gallery</title>
     </head>
     <body class="galleryBody">
+        <!-- The stuff that is only visible when you are viewing a picture -->
         <div class="shadow"></div>
         <img alt="image" class="bigImage">
         <button class="closeButton">Close the image</button>
+        <!-- Navbar -->
         <header class="transparent pacificoFont">
             <div class="logoHolder">
                 <!-- Logo image -->
@@ -32,11 +38,13 @@
                 <a href="contact.php" class="headerLink hlContact">Contact</a>
             </div>
         </header>
+        <!-- The gallery -->
         <section id="galleryContent">
             <div class="container">
                 <h1>Pictures of my projects</h1>
             </div>
             <div class="galleryRow">
+                <!-- Every project has its own container -->
                 <div class="container galleryProjectContainer">
                     <h2 class="galleryHeaderAnim">Restoran</h2>
                     <p>
@@ -135,13 +143,14 @@
             </div>
             <h2>And of course, this website is also my personal work :)</h2>
         </section>
+        <!-- Footer -->
         <section id="footer">
             <footer>
                 <p>Made by Nikola Milun© 2022</p>
                 <p>All rights reserved</p>
-                <p class="mima">Logo by <a href="https://www.instagram.com/eshi_mima/">EshiMima</a></p>
+                <!-- Credits for Mima -->
+                <p class="mima">Logo and design improvements by <a href="https://www.instagram.com/eshi_mima/">EshiMima</a></p>
             </footer>
         </section>
-        <script src="gallery.js"></script>
     </body>
 </html>

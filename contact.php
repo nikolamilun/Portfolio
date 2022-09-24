@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Site icon -->
+        <link rel="icon" href="images/SmallLogo.jpg">
         <!-- Meta tags -->
         <meta name="description" content="I'm Nikola Milun, a junior full-stack dev and here's my portfolio!">
         <meta name="keywords" content="programming, web developer, database design, desktop apps, developer, full-stack">
@@ -16,6 +18,7 @@
         <title>Contact me - Nikola Milun</title>
     </head>
     <body class="contactBody">
+        <!-- Navbar -->
         <header class="transparent pacificoFont">
             <div class="logoHolder">
                 <!-- Logo image -->
@@ -30,13 +33,16 @@
             </div>
         </header>
         <?php
+            // Errors array and error messages
             $errors = [];
             const NAME_ERROR = 'Please, type your name in correctly';
             const EMAIL_ERROR = 'Please, type your email correctly';
             const MESSAGE_ERROR = 'Please, type your message correctly';
             const OTHER_ERROR = 'An error has occured while processing your request';
+            // This is a self-processing form, so if the method is GET, show the form: 
             if($_SERVER['REQUEST_METHOD'] === 'GET'){
         ?>
+            <!-- Social media links -->
             <section id="socialMediaSection">
                 <div class="container">
                     <h2 class="contactHeader">You can contact me on:</h2>
@@ -50,7 +56,9 @@
                 </div>
             </section>
             <section id="messageForm">
+                <!-- Contact form -->
                 <h2>Send me a message!</h2>
+                <!-- The form submits itself -->
                 <form action="<?php htmlspecialchars($_SERVER['PHP_SELF'])?>" method = "POST" id="mainForm">
                     <p>*Every field is required</p>
                     <div>
@@ -105,15 +113,20 @@
                 } else{
                     $errors['message'] = MESSAGE_ERROR;
                 }
+                // if no errors, proceed
                 if(!count($errors)){
+                    // Establish MySQL connection
                     $conn = new mysqli($servername, $username, $password, $database);
 
+                    // Check for errors
                     if($conn-> connect_error)
                         $errors['other'] = OTHER_ERROR;
                     else
                         {
+                            // If no errors, execute SQL
                             $cmdText = "INSERT INTO Message (name, email, message) VALUES('" .$name. "', '" .$email. "', '" .$message. "');";  
                             
+                            // Check for SQL query problems
                             if(mysqli_query($conn, $cmdText)){
                             ?>
                                 <section id="formSubmitted">
@@ -122,26 +135,31 @@
                                     <p>In the meantime, feel free to explore around the website!</p>
                                 </section>
                             <?php
+                            // Close the connection
                             mysqli_close($conn); }
                             else
                                 $errors['other'] = OTHER_ERROR;
                         }
                 }
+                // If errors were found, show them
                 else{ ?>
                     <section id="formSubmitted">
                         <h1>There has been an error processing your request.</h1>
                         <p>Check if you had written everything down correctly! The errors: </p>
                         <?php foreach($errors as $error){
+                            // Each error from the errors array is shown in HTML
                             echo("<p>$error</p>");
                         }?>
                     </section>
                 <?php }
                 } ?>
+        <!-- Footer -->
         <section id="footer">
             <footer>
                 <p>Made by Nikola Milun© 2022</p>
                 <p>All rights reserved</p>
-                <p class="mima">Logo by <a href="https://www.instagram.com/eshi_mima/">EshiMima</a></p>
+                <!-- Credits to Mima -->
+                <p class="mima">Logo and design improvements by <a href="https://www.instagram.com/eshi_mima/">EshiMima</a></p>
             </footer>
         </section>              
     </body>
