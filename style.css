@@ -508,6 +508,14 @@ th, td{
         width: 80%;
     }
 }
+@media screen and (max-width: 800px){
+    footer{
+        position: fixed !important;
+        bottom: 0 !important;
+        width: 100%;
+        background-color: white;
+    }
+}
 @media screen and (max-width: 600px){
     .welcomeContent{
         display: block;
@@ -541,7 +549,7 @@ th, td{
         margin: 3px;
     }
     footer{
-        font-size: 4vw;
+        font-size: 3vw;
     }
     #aboutDesc p{
         font-size: 4vw;
@@ -561,8 +569,5 @@ th, td{
     }
     label, input, .submit{
         font-size: 4.5vw;
-    }
-    footer{
-        font-size: 3vw;
     }
 }
