@@ -71,7 +71,7 @@
                     </div>
                     <div>
                         <label for="message">Your message to me: </label>
-                        <textarea name="message" id="message" cols="40" rows="20" placeholder = "Feel free to say anything!" style="resize: none;" required></textarea>
+                        <textarea name="message" id="message" cols="40" rows="10" placeholder = "Feel free to say anything!" style="resize: none;" required></textarea>
                     </div>
                     <input type="submit" class="submit">
                 </form>

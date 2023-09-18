@@ -515,6 +515,12 @@ th, td{
         width: 100%;
         background-color: white;
     }
+    #messageForm{
+        font-size: 3vw !important;
+    }
+    #message{
+        height: 10%;
+    }
 }
 @media screen and (max-width: 600px){
     .welcomeContent{
